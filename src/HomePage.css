@@ -1,0 +1,88 @@
+/* HomePage.css */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow: hidden; /* Disable scrolling */
+}
+
+/* Full page layout for login */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 20px); /* Full height minus top/bottom margin */
+    margin: 10px auto; /* 20px top/bottom, 10px left/right */
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Background applied to the container */
+    border-radius: 10px; /* Optional: Add some border radius to the background */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Optional: Shadow for the full container */
+}
+
+/* Hide the left side */
+.left-side {
+    display: none;
+}
+
+/* Right side that will contain the login box */
+.right-side {
+    width: 100%; /* Full width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for the login box */
+.login-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Full width within the container */
+    max-width: 500px; /* Increase max width for larger screens */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 400px;
+}
+
+.login-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.login-box h2 {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
+}
+
+.login-box input[type="text"], 
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.login-box button:hover {
+    background-color: #34495e;
+}

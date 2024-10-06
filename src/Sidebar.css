@@ -1,0 +1,49 @@
+/* Sidebar.css */
+.sidebar {
+    width: 200px; /* Width of the sidebar when open */
+    padding: 15px; /* Padding inside the sidebar */
+    background-color: #f8f9fa; /* Background color */
+    border-right: 1px solid #dee2e6; /* Right border */
+    position: fixed; /* Fix the sidebar position */
+    height: 100%; /* Full height */
+    overflow-y: auto; /* Scroll if content overflows */
+    transition: width 0.3s; /* Smooth transition for width */
+}
+
+.sidebar.collapsed {
+    width: 50px; /* Width of the sidebar when collapsed */
+}
+
+.toggle-icon {
+    display: flex; /* Align icon properly */
+    justify-content: center; /* Center the icon */
+    cursor: pointer; /* Pointer on hover */
+    margin-bottom: 15px; /* Margin for spacing */
+}
+
+.toggle-icon i {
+    font-size: 20px; /* Size of the icon */
+    color: #007bff; /* Icon color */
+}
+
+.sidebar h3 {
+    text-align: center; /* Center the header */
+}
+
+.sidebar ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.sidebar ul li {
+    margin: 15px 0; /* Spacing between links */
+}
+
+.sidebar ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #007bff; /* Link color */
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}

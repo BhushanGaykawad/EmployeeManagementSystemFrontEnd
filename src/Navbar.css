@@ -1,0 +1,80 @@
+/* Navbar.css */
+
+.navbar {
+    background-color: #4a90e2; /* Navbar background color */
+    padding: 10px;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    font-family: 'Pacifico', cursive; /* Change to your desired font */
+    font-size: 1.5rem !important;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+    display: flex; /* Align list items in a row */
+}
+
+.navbar ul li {
+    margin: 0 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white; /* Text color for links */
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 30px;
+}
+
+.navbar ul li a:hover {
+    color: #ff6f61; /* Change color on hover */
+}
+
+.sign-in-as {
+    color: white; /* White text color */
+    font-weight: bold; /* Bold font */
+    margin-left: 20px; /* Space from navbar items */
+    display: flex; /* Use flexbox for proper alignment */
+    align-items: center; /* Center text vertically */
+    font-size: small;
+    
+}
+
+.logout-button {
+    margin-left: 15px; /* Space between "Sign In as" and the button */
+    padding: 8px 12px; /* Padding for the button */
+    background-color: #ff6f61; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.logout-button:hover {
+    background-color: #ff4a3a; /* Darker shade on hover */
+}
+.sign-in-as {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+.sign-in-as span {
+    margin-right: 10px; /* Space between the text and the button */
+}
+
+.sign-in-as button {
+    padding: 5px 10px; /* Adjust button padding */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f44336; /* Example button color */
+    color: white; /* Button text color */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.sign-in-as button:hover {
+    background-color: #d32f2f; /* Darker shade on hover */
+}
