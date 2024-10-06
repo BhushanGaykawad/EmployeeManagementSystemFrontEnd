@@ -17,6 +17,36 @@ const UpdateEmployee = ({ employeeId, onClose }) => {
   });
 
   const [error, setError] = useState(null);
+  
+  const [departments, setDepartments] = useState([]); 
+  const [roles, setRoles] = useState([]);
+  
+  
+  useEffect(() => {
+    const fetchDepartments = async () => {
+        try {
+            const response = await axiosInstance.get('http://localhost:5270/api/Department'); // Adjust the endpoint as necessary
+            setDepartments(response.data);
+            console.log(response.data);
+        } catch (error) {
+            console.error("Error fetching departments:", error);
+            setError("Failed to fetch departments.");
+        }
+    };
+
+    const fetchRoles = async () => {
+        try {
+            const response = await axiosInstance.get('http://localhost:5270/api/Role'); // Adjust the endpoint as necessary
+            setRoles(response.data);
+        } catch (error) {
+            console.error("Error fetching roles:", error);
+            setError("Failed to fetch roles.");
+        }
+    };
+
+    fetchDepartments();
+    fetchRoles();
+}, []);
 
   // Fetch existing employee details using employeeId prop
   useEffect(() => {
@@ -100,25 +130,39 @@ const UpdateEmployee = ({ employeeId, onClose }) => {
           />
         </div>
         <div className="form-group">
-          <label>Department ID:</label>
-          <input
-            type="number"
-            name="employeeDepartmentId"
-            value={employee.employeeDepartmentId}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>Role ID:</label>
-          <input
-            type="number"
-            name="employeeRoleId"
-            value={employee.employeeRoleId}
-            onChange={handleChange}
-            required
-          />
-        </div>
+                    <label htmlFor="employeeDepartmentId">Department</label>
+                    <select
+                        id="employeeDepartmentId"
+                        name="employeeDepartmentId"
+                        value={employee.employeeDepartmentId}
+                        onChange={handleChange}
+                        required
+                    >
+                        <option value="" disabled>Select Department</option>
+                        {departments.map(department => (
+                            <option key={department.departmentId} value={department.departmentId}>
+                                {department.departmentName} {/* Adjust according to your data structure */}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="employeeRoleId">Role</label>
+                    <select
+                        id="employeeRoleId"
+                        name="employeeRoleId"
+                        value={employee.employeeRoleId}
+                        onChange={handleChange}
+                        required
+                    >
+                        <option value="" disabled>Select Role</option>
+                        {roles.map(role => (
+                            <option key={role.roleID} value={role.roleID}>
+                                {role.roleType} {/* Adjust according to your data structure */}
+                            </option>
+                        ))}
+                    </select>
+                </div>
         <div className="form-group">
           <label>Date of Joining:</label>
           <input
