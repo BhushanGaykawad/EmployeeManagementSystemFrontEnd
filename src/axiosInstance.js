@@ -39,8 +39,9 @@ axiosInstance.interceptors.response.use(
           response = await axios.post(`${URL}/SuperUserLogin/refresh`, { refreshToken: refToken });
 
           if (response.status === 200) {
-            const newAccessToken = response.data.access;
-            const newRefresh = response.data.refresh;
+            console.log("2343Here I came..")
+            const newAccessToken = response.data.accessToken;
+            const newRefresh = response.data.refreshToken;
 
             // Store the new tokens in localStorage
             localStorage.setItem('access', newAccessToken);
